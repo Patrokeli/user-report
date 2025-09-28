@@ -18,6 +18,8 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
     Route::get('/user-report', [UserReportController::class, 'index'])->name('user.report');
+    Route::get('/user-report/pdf', [UserReportController::class, 'exportPdf'])->name('user.report.pdf');
+
 });
 
 require __DIR__.'/auth.php';
